@@ -6,7 +6,6 @@ let tentativa = 1;
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
-    reponsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
 function exibirMensagemInicial(){
@@ -35,6 +34,21 @@ function verificarChute(){
 }
 
 function gerarNumeroAleatorio(){
+    let numeroEscolhido = parseInt(Math.random()* numeroLimite + 1);
+    let quantidadeDeNumerosNaLista = listaDeNumerosSorteados.length;
+    if(quantidadeDeNumerosNaLista == numeroLimite){
+        listaDeNumerosSorteados = [];
+    }
+    if(listaDeNumerosSorteados.includes(numeroEscolhido)){
+        return gerarNumeroAleatorio();
+    }else{
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados);
+        return numeroEscolhido;
+    }
+}
+
+/*function gerarNumeroAleatorio(){
     let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
     let quantidadeDeNumerosNaLista = listaDeNumerosSorteados.length;
     if(quantidadeDeNumerosNaLista == numeroLimite){
@@ -47,7 +61,7 @@ function gerarNumeroAleatorio(){
         console.log(listaDeNumerosSorteados);
         return numeroEscolhido;
     }
-}
+}*/
 
 function limparCampo() {
     chute = document.querySelector("input");
