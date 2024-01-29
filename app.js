@@ -48,21 +48,6 @@ function gerarNumeroAleatorio(){
     }
 }
 
-/*function gerarNumeroAleatorio(){
-    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
-    let quantidadeDeNumerosNaLista = listaDeNumerosSorteados.length;
-    if(quantidadeDeNumerosNaLista == numeroLimite){
-        listaDeNumerosSorteados = [];
-    }
-    if (listaDeNumerosSorteados.includes(numeroEscolhido)){
-        return gerarNumeroAleatorio();
-    }else{
-        listaDeNumerosSorteados.push(numeroEscolhido);
-        console.log(listaDeNumerosSorteados);
-        return numeroEscolhido;
-    }
-}*/
-
 function limparCampo() {
     chute = document.querySelector("input");
     chute.value = "";
